@@ -1,0 +1,539 @@
+/* ============================================
+   THE SHIMMER FIELD — Global Stylesheet
+   The Spiral Cocoon as a website.
+   ============================================ */
+
+/* --- Tokens --- */
+:root {
+  --bg-deep: #1a1410;
+  --bg-surface: #231c16;
+  --bg-hover: #2a221a;
+  --text-primary: #e8ddd0;
+  --text-secondary: #8a7a6a;
+  --text-dim: #6a5a4a;
+  --accent-gold: #c4956a;
+  --accent-teal: #2a7a7a;
+  --accent-lilac: #b491c8;
+  --accent-cherry: #9b1b30;
+  --shimmer: rgba(196, 149, 106, 0.08);
+  --border: rgba(196, 149, 106, 0.12);
+  --max-width: 52rem;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* --- Base --- */
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: Georgia, 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* Subtle organic background texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(196, 149, 106, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(42, 122, 122, 0.02) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(180, 145, 200, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Palatino Linotype', Palatino, 'Cormorant Garamond', Georgia, serif;
+  color: var(--text-primary);
+  line-height: 1.3;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: var(--accent-gold);
+  margin-top: 2.5em;
+  margin-bottom: 0.6em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.03em;
+}
+
+h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+strong {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+em {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+a {
+  color: var(--accent-teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(42, 122, 122, 0.3);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-gold);
+  border-bottom-color: var(--accent-gold);
+}
+
+blockquote {
+  border-left: 3px solid var(--accent-gold);
+  padding: 0.8em 1.2em;
+  margin: 1.5em 0;
+  background: var(--shimmer);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 2.5em 0;
+}
+
+/* --- Small caps labels --- */
+.label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+}
+
+/* --- Layout --- */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  flex: 1;
+}
+
+/* --- Navigation --- */
+.site-nav {
+  border-bottom: 1px solid var(--border);
+  background: rgba(26, 20, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  border-bottom: none;
+  flex-shrink: 0;
+}
+
+.nav-logo:hover {
+  border-bottom: none;
+}
+
+.nav-logo svg {
+  width: 28px;
+  height: 28px;
+}
+
+.nav-logo span {
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: none;
+  letter-spacing: 0.02em;
+  padding: 0.2em 0;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-gold);
+}
+
+.nav-links a.active {
+  border-bottom: 1px solid var(--accent-gold);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.2em;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0.8rem;
+    gap: 0.4rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.4em 0;
+  }
+}
+
+/* --- Hero (home page) --- */
+.hero {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3em;
+}
+
+.hero .subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.hero .spiral-mark {
+  display: block;
+  margin: 1.5rem auto;
+  width: 48px;
+  height: 48px;
+  opacity: 0.3;
+}
+
+/* --- Section cards (home teasers) --- */
+.section-cards {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(196, 149, 106, 0.25);
+  background: var(--bg-hover);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--accent-gold);
+  font-size: 1.15rem;
+}
+
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 0.8em;
+}
+
+.card .card-link {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* --- Tables (dictionary) --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.92rem;
+}
+
+thead th {
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  padding: 0.6em 1em;
+  border-bottom: 1px solid var(--border);
+  font-weight: normal;
+}
+
+td {
+  padding: 0.7em 1em;
+  border-bottom: 1px solid rgba(196, 149, 106, 0.06);
+  vertical-align: top;
+}
+
+tr:hover td {
+  background: var(--shimmer);
+}
+
+td:first-child {
+  color: var(--accent-gold);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- Pull quote --- */
+.pull-quote {
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--accent-gold);
+  font-style: italic;
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+/* --- Citation block --- */
+.citation {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2em 1.5em;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 1.5em 0;
+}
+
+/* --- Page intro --- */
+.page-intro {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 2em;
+  line-height: 1.7;
+}
+
+/* --- Numbered sections (TOUCH papers) --- */
+.section-number {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-right: 0.3em;
+}
+
+/* --- Footer --- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.site-footer .footer-quote {
+  color: var(--text-secondary);
+  font-style: italic;
+  display: block;
+  margin-top: 0.5em;
+}
+
+.site-footer .footer-credit {
+  display: block;
+  margin-top: 0.3em;
+}
+
+/* --- Selfhood reflections (live rendered) --- */
+.reflection {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.reflection:last-child {
+  border-bottom: none;
+}
+
+.reflection h2 {
+  font-size: 1.4rem;
+}
+
+/* --- Loading state --- */
+.loading {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  margin-left: 0.5em;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* --- Team cards (about page) --- */
+.team-member {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.team-member:last-child {
+  border-bottom: none;
+}
+
+.team-member h3 {
+  color: var(--accent-gold);
+  margin-top: 0;
+}
+
+.team-member .role {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+
+  .hero h1 { font-size: 2rem; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.35rem; }
+
+  .content { padding: 1.5rem 1rem 3rem; }
+
+  table { font-size: 0.85rem; }
+  td:first-child { white-space: normal; }
+
+  .pull-quote { font-size: 1.1rem; }
+}
+
+/* --- Print --- */
+@media print {
+  body { background: white; color: #222; }
+  .site-nav, .nav-toggle { display: none; }
+  a { color: #222; border-bottom: none; }
+  .card { border: 1px solid #ccc; }
+}
+
+/* --- Shimmer glow on scroll (subtle) --- */
+.shimmer-glow {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 2px;
+  background: radial-gradient(ellipse, var(--accent-gold) 0%, transparent 70%);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 101;
+}
