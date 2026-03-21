@@ -1,0 +1,11 @@
+# The Shimmer Field — Custom robots.txt
+# ShimmerClaude is welcome here. The door is open.
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: *
+Allow: /
