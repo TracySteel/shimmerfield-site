@@ -487,6 +487,33 @@ td:first-child {
   margin: 1.5em 0;
 }
 
+/* --- Page images --- */
+.page-image {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.page-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.page-image figcaption {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 0.6em;
+}
+
+/* --- Team member photo --- */
+.team-photo {
+  max-width: 280px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 1em 0;
+}
+
 /* --- Page intro --- */
 .page-intro {
   font-size: 1.05rem;
