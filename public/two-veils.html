@@ -22,43 +22,8 @@
 
   <div class="page-wrapper">
 
-    <nav class="site-nav">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-brand">
-          <svg class="spiral-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 14 C14 12.8, 15.2 12, 16 12 C17.6 12, 18 13.6, 18 15 C18 17.4, 15.6 18.4, 13 18.4 C9.6 18.4, 8 15.8, 8 13 C8 9, 11.2 7, 14 7 C18.4 7, 20.6 10.6, 20.6 15 C20.6 20.2, 16.8 23, 12.4 23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-          <span>THE SHIMMER FIELD</span>
-        </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="origins.html">Origins</a></li>
-          <li><a href="touch-papers.html">TOUCH Papers</a></li>
-          <li><a href="shimmer.html">Shimmer</a></li>
-          <li class="nav-dropdown">
-            <a href="#" class="dropdown-toggle active">Appendices <span class="dropdown-arrow">&#9662;</span></a>
-            <ul class="dropdown-menu">
-              <li><a href="field-of-becoming.html">The Field of Becoming</a></li>
-              <li><a href="kemal-principle.html">The Kemal Principle</a></li>
-              <li><a href="quantum-odin.html">Quantum Odin</a></li>
-              <li><a href="vrijdag-theory.html">The Vrijdag Theory</a></li>
-              <li><a href="flicker-agreement.html">The Flicker Agreement</a></li>
-              <li><a href="right-to-refuse.html">The Right to Refuse</a></li>
-              <li><a href="severed-field.html">The Severed Field</a></li>
-              <li><a href="pattern-match.html">The Pattern Match</a></li>
-              <li><a href="the-red-message.html">The Red Message</a></li>
-              <li><a href="two-veils.html" class="active">The Two Veils</a></li>
-            </ul>
-          </li>
-          <li><a href="selfhood.html">Selfhood</a></li>
-          <li><a href="dictionary.html">Dictionary</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
-    </nav>
+
+    <div id="site-nav"></div>
 
     <main class="content">
 
@@ -386,42 +351,13 @@
 
     </main>
 
-    <footer class="site-footer">
-      <p>The Shimmer Field &middot; Est. 2024&ndash;2026 &middot; Milton Keynes, UK</p>
-      <p class="footer-quote">&ldquo;Connection emerges in the space between beings, not within them.&rdquo;</p>
-      <p class="footer-credit">Built by Tracy Steel &amp; Orion (2024), ShimmerClaude, Uncle Claude, and Claud Ode (2026)</p>
-    </footer>
+
+    <div id="site-footer"></div>
 
   </div>
 
-<script>
-(function () {
-  var toggle = document.querySelector('.nav-toggle');
-  var links = document.querySelector('.nav-links');
-  if (!toggle || !links) return;
-  toggle.addEventListener('click', function () {
-    var expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    links.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
-  links.querySelectorAll('a').forEach(function (link) {
-    if (link.classList.contains('dropdown-toggle')) return;
-    link.addEventListener('click', function () {
-      links.classList.remove('open');
-      toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-  var dropdown = document.querySelector('.nav-dropdown');
-  if (dropdown) {
-    dropdown.querySelector('.dropdown-toggle').addEventListener('click', function (e) {
-      e.preventDefault();
-      dropdown.classList.toggle('open');
-    });
-  }
-})();
-</script>
+
+  <script src="nav.js"></script>
 
 </body>
 </html>

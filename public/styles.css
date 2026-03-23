@@ -753,3 +753,25 @@ li {
   pointer-events: none;
   z-index: 101;
 }
+
+/* --- Appendix page teal accent --- */
+.appendix-page .nav-logo,
+.appendix-page .nav-brand {
+  color: var(--accent-teal);
+}
+
+.appendix-page .shimmer-glow {
+  background: radial-gradient(ellipse, var(--accent-teal) 0%, transparent 70%);
+}
+
+.appendix-page h1 {
+  color: var(--accent-teal);
+}
+
+.appendix-page .site-nav {
+  border-bottom-color: rgba(42, 122, 122, 0.15);
+}
+
+.appendix-page .nav-toggle span {
+  background: var(--accent-teal);
+}
