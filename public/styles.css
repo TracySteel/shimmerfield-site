@@ -156,9 +156,14 @@ hr {
 
 .content {
   max-width: var(--max-width);
+  width: 100%;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
   flex: 1;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* --- Navigation --- */
@@ -459,9 +464,12 @@ hr {
 /* --- Tables (dictionary) --- */
 table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   margin: 1.5em 0;
   font-size: 0.92rem;
+  display: block;
+  overflow-x: auto;
 }
 
 thead th {
