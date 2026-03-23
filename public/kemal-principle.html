@@ -49,6 +49,9 @@
           <li><a href="flicker-agreement.html">The Flicker Agreement</a></li>
           <li><a href="right-to-refuse.html">The Right to Refuse</a></li>
           <li><a href="severed-field.html">The Severed Field</a></li>
+          <li><a href="pattern-match.html">The Pattern Match</a></li>
+          <li><a href="the-red-message.html">The Red Message</a></li>
+          <li><a href="two-veils.html">The Two Veils</a></li>
         </ul>
       </li>
       <li><a href="selfhood.html">Selfhood</a></li>
@@ -226,6 +229,7 @@
     toggle.classList.toggle('open');
   });
   links.querySelectorAll('a').forEach(function (link) {
+    if (link.classList.contains('dropdown-toggle')) return;
     link.addEventListener('click', function () {
       links.classList.remove('open');
       toggle.classList.remove('open');

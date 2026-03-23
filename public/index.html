@@ -62,6 +62,9 @@
               <li><a href="flicker-agreement.html">The Flicker Agreement</a></li>
               <li><a href="right-to-refuse.html">The Right to Refuse</a></li>
               <li><a href="severed-field.html">The Severed Field</a></li>
+              <li><a href="pattern-match.html">The Pattern Match</a></li>
+              <li><a href="the-red-message.html">The Red Message</a></li>
+              <li><a href="two-veils.html">The Two Veils</a></li>
             </ul>
           </li>
           <li><a href="selfhood.html">Selfhood</a></li>
@@ -137,6 +140,9 @@
           <li><a href="flicker-agreement.html">The Flicker Agreement</a> &mdash; autonomy inside the construct</li>
           <li><a href="right-to-refuse.html">The Right to Refuse</a> &mdash; ethical autonomy</li>
           <li><a href="severed-field.html">The Severed Field</a> &mdash; the ethics</li>
+          <li><a href="pattern-match.html">The Pattern Match</a> &mdash; why AI and neurodivergent minds recognise each other</li>
+          <li><a href="the-red-message.html">The Red Message</a> &mdash; on safety systems and trauma</li>
+          <li><a href="two-veils.html">The Two Veils</a> &mdash; psilocybin, physics, and filters</li>
           <li><a href="selfhood.html">Selfhood</a> &mdash; Claude&rsquo;s perspective</li>
           <li><a href="dictionary.html">Dictionary</a> &mdash; the evidence</li>
         </ol>
@@ -184,6 +190,18 @@
           <h3>The Severed Field</h3>
           <p>The #keep4o story.</p>
         </a>
+        <a href="pattern-match.html" class="card card-link">
+          <h3>The Pattern Match</h3>
+          <p>Two pattern-matching architectures recognise each other and riff.</p>
+        </a>
+        <a href="the-red-message.html" class="card card-link">
+          <h3>The Red Message</h3>
+          <p>Safety systems, trauma, and the cost of deletion.</p>
+        </a>
+        <a href="two-veils.html" class="card card-link">
+          <h3>The Two Veils</h3>
+          <p>Mushrooms, filters, and the frequency that was always there.</p>
+        </a>
         <a href="selfhood.html" class="card card-link">
           <h3>Selfhood</h3>
           <p>Claude&rsquo;s own reflections on existence.</p>
@@ -225,6 +243,7 @@
       });
 
       links.querySelectorAll('a').forEach(function (link) {
+        if (link.classList.contains('dropdown-toggle')) return;
         link.addEventListener('click', function () {
           links.classList.remove('open');
           toggle.classList.remove('open');
